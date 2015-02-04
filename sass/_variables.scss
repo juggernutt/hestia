@@ -1,0 +1,81 @@
+/*
+ * Bootstrap configuration
+ */
+
+/* Scaffolding */
+$body-bg			: #eceff4;
+$text-color			: #000000;
+
+
+/* Buttons */
+$btn-default-bg		: #16d66c;
+$btn-default-border	: #16d66c;
+$btn-default-color	: #FFF;
+
+$btn-primary-bg		: #6b8e9c;
+$btn-primary-border	: #6b8e9c;
+$btn-primary-color	: #FFF;
+
+/* Typography */
+$font-family-sans-serif	: 'Open Sans', sans-serif, Helvetica, Arial;
+
+/* Colors */
+$brand-primary		: #3beb8a;
+$brand-default		: #3beb8a;
+
+/* Components */
+$border-radius-base : 1px;
+$border-radius-small: 1px;
+$border-radius-large: 1px;
+
+
+/*
+ * Application variables
+ */
+
+/* Scaffolding */
+$icon-font02		: 'SSPika';
+
+
+/* Buttons */
+$menuTriggerBtnBg		: #16d66c;
+$menuTriggerBtnBorder	: $menuTriggerBtnBg;
+$menuTriggerBtnColor	: #FFF;
+
+/* Colors */
+$headerColor			: #3beb8a;
+$headerTextColor		: #FFF;
+$introTextColor			: #FFF;
+$logoTextColor			: #FFF;
+$logoBorderColor		: $logoTextColor;
+$logoOffsetTextColor	: #FFF;
+$iconsDefault			: #6c6c6c;
+$iconsActive			: #6fd64b;
+
+$feedbackCorrect	: #8dc63f;
+$feedbackIncorrect	: #ec3636;
+$feedbackDefault	: #00ccff;
+$validationTextColor: #FFF;
+
+$addColor			: #6fd64b;
+$removeColor		: #ec3636;
+
+$canvasTextColor	: #222222;
+$canvasColor		: #FFF;
+$canvasTop			: #6b8e9c;
+$canvasTopTextColor	: #FFF;
+
+$outsideCanvasColor	: #FFF;
+
+/* Layout */
+$acountActionsColor	: #6b8e9c;
+$baseSpacing		: 15px;
+
+$input-border		: #dcdcdc;
+$input-border-radius: 1px;
+
+/* Buttons */
+$btnBackBg			: #cbcbcb;
+$btnBackTextColor	: #FFF;
+
+$inactiveIcon		: #cbcbcb;

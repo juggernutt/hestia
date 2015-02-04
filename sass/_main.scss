@@ -1,0 +1,288 @@
+/*
+ * HESTIA BASE CSS
+ * Includes all general styling.
+ *
+ * Application notes:
+ * Base font-size is 14 pixels 
+ */
+
+
+/*
+ * Logo
+ */
+
+.logo {
+	font-size: 1.714em; /* 24 pixels */
+	color: $logoTextColor;
+	display: block;
+	
+	.brand-name {
+		display: inline-block;
+		clear: both;
+		vertical-align: text-bottom;
+	}
+	
+	&:hover, &:focus {
+		text-decoration: none;
+		color: $logoTextColor;
+	}
+}
+
+.logo.offset {
+	color: $logoOffsetTextColor;
+	text-align: center;
+	display: inline-block;
+	
+	&:hover {
+		.brand-match {
+			color: $brand-default;
+			border-color: lime;
+		}
+	}
+}
+
+
+
+/*
+ * Buttons
+ */
+
+.btn {
+	&.btn-default {
+		text-transform: uppercase;
+	}
+}
+
+.navbar-toggle {
+	
+	&.menu-trigger {
+		height: 50px;
+		text-indent: -9999px;
+		width: 50px;
+		display: block;
+		margin: 0;
+		padding: 0;
+		background: $menuTriggerBtnBg;
+		color: $menuTriggerBtnColor;
+		border: $menuTriggerBtnBorder;
+	}
+	.icon-bar {
+		background-color: white;
+		margin: 0 auto;
+		width: 28px;
+		
+		&+.icon-bar {
+			margin-top: 6px;
+		}
+	}
+}
+
+/*
+ * Frame styling
+ */
+
+.header {
+	background: $headerColor;
+	color: $headerTextColor;
+	@include box-sizing(border-box);
+	margin: 0 0 $baseSpacing 0;
+	border: 0;
+	
+	.logo-container {
+		@include make-xs-column(12);
+		@include make-sm-column(5);
+	}
+	.account-actions {
+		@include make-xs-column(12);
+		@include make-sm-column(3);
+		@include make-sm-column-offset(4);
+		
+		.link { 
+			color: $acountActionsColor;
+			margin-right: 5px;
+		 }
+	}
+	
+}
+
+.canvas {
+	background-color: $canvasColor;
+	color: $canvasTextColor;
+	padding: 15px 20px;
+	margin-bottom: 35px;
+	
+	&.with-top {
+		margin-top: 0;
+		padding-top: 0;
+	}
+	
+	.canvas-top {
+		margin-top: 0;
+		margin-bottom: $baseSpacing;
+		@include make-row();
+	}
+}
+
+.canvas-top {
+	background-color: $canvasTop; 
+	color: $canvasTopTextColor; 
+	min-height: 30px;
+	padding: 10px 20px;
+	font-weight: 600;
+}
+
+.type {
+	label {
+		color: $canvasTextColor;
+	}
+}
+
+.outside-canvas {
+	text-align: center;
+	color: $outsideCanvasColor;
+	text-shadow: 0px 3px 5px rgba(3, 3, 3, 0.75);
+	margin-bottom: 30px;
+	
+	h1 {
+		font-size: 2.071em; /* 29 pixels */
+	}
+}
+
+
+/* 
+ * Dashboard 
+ */
+ 
+	
+.chart {
+	&.full {
+		@include make-xs-column(12);
+	}
+}
+
+.form-group {	
+	.label:not(.type), label:not(.type) {
+		font-size: 1.143em; /* 16 pixels */
+	}
+	
+	.type {
+		label, .label { font-weight: 400; }
+	}
+	
+	&.validation {
+		position: relative;
+		
+		&> .label, &> label {
+			position: relative;
+			color: $text-color;
+			text-align: left;
+			padding-left: 0;
+			padding-right: 0;
+			
+			&:before {
+				color: $validationTextColor;
+				position: absolute;
+				left: -35px;
+				top: 0;
+				bottom: 0;
+				display: inline-block;
+				width: 29px;
+				height: 29px;
+				content: '';
+				margin: auto;
+				background-color: $feedbackDefault;
+				border-radius: 15px;
+				font-family: $icon-font02;
+				text-align: center;
+				content: '⚑';
+				line-height: 2em;
+			}
+		}
+		
+		&.correct {
+			&> .label, &> label {
+				&:before {
+					background-color: $feedbackCorrect;
+					content: '✓'
+				}
+			}
+		}
+		
+		&.incorrect {
+			&> .label, &> label {
+				&:before {
+					background-color: $feedbackIncorrect;
+					content: '␡';
+				}
+			}
+		}
+	}
+}
+
+
+/*
+ * Headings
+ */
+
+h1, .h1 {
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+/*
+ * Generic styling and elements
+ */
+
+.label-full {
+	display: block;
+}
+
+
+/*
+ * Extra small device styling
+ */
+
+@media (max-width: $screen-xs-max) {
+	.logo-container {
+		margin-bottom: 10px;
+	}
+	
+	.header {
+		.logo {
+			display: inline-block;
+		}
+	}
+	
+	.canvas {
+		@include make-xs-column(12);
+	}
+	
+	.outside-canvas {
+		@include make-xs-column(12);
+		h1, .h1 {
+			font-size: 1.714em; /* 24 pixels */
+		}
+	}
+}
+
+
+/*
+ * Small and up device styling
+ */
+@media (min-width: $screen-sm-min) {
+	
+	.account-actions {
+		text-align: right;
+	}
+	
+	.canvas {
+		@include make-sm-column(10);
+		@include make-sm-column-offset(1);
+	}
+	
+	.outside-canvas {
+		@include make-sm-column(10);
+		@include make-sm-column-offset(1);
+	}
+	
+}
