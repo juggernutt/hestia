@@ -12,19 +12,36 @@
  */
 
 .logo {
-	font-size: 1.714em; /* 24 pixels */
 	color: $logoTextColor;
-	display: block;
+	display: inline-block;
+	margin-left: $baseSpacing;
 	
 	.brand-name {
 		display: inline-block;
 		clear: both;
-		vertical-align: text-bottom;
+		margin-right: 5px;
+		font-size: 14px;
+		font-weight: bold;
 	}
 	
 	&:hover, &:focus {
 		text-decoration: none;
 		color: $logoTextColor;
+	}
+}
+
+.logo-icon {
+	font-family: $logoFont;
+	font-size: 36px;
+	display: inline-block;
+	vertical-align: middle;
+	font-family: $logoFont;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	
+	&:before {
+		font-weight: 400;
+		content: "\e600";
 	}
 }
 
@@ -88,14 +105,8 @@
 	margin: 0 0 $baseSpacing 0;
 	border: 0;
 	
-	.logo-container {
-		@include make-xs-column(12);
-		@include make-sm-column(5);
-	}
 	.account-actions {
-		@include make-xs-column(12);
-		@include make-sm-column(3);
-		@include make-sm-column-offset(4);
+		float: 	right;
 		
 		.link { 
 			color: $acountActionsColor;
@@ -192,7 +203,6 @@
 				margin: auto;
 				background-color: $feedbackDefault;
 				border-radius: 15px;
-				font-family: $icon-font02;
 				text-align: center;
 				content: '⚑';
 				line-height: 2em;
@@ -273,6 +283,10 @@ h1, .h1 {
 	
 	.account-actions {
 		text-align: right;
+	}
+	
+	.chart-full {
+		@include make-sm-column(12);
 	}
 	
 	.canvas {

@@ -1,0 +1,39 @@
+/*
+ * HESTIA DASHBOARD CSS
+ * Includes styling for the dashboard
+ *
+ * Application notes:
+ * Base font-size is 14 pixels 
+ */
+
+
+/*
+ * Dashboard
+ */
+
+/*
+ * Extra small device styling
+ */
+
+@media (max-width: $screen-xs-max) {
+
+}
+
+
+/*
+ * Small and up device styling
+ */
+@media (min-width: $screen-sm-min) {
+	.page-dashboard {
+		.canvas {
+			&.care-recipient {
+				border-right: $baseSpacing solid $canvasBorderColor;
+				@include make-sm-column(6);
+			}
+			&.bracelet-status {
+				@include make-sm-column(4);
+				@include make-sm-column-offset(0);
+			}
+		}
+	}
+}

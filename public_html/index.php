@@ -12,6 +12,7 @@
 
 		<link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
 		<link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
+		<link href="/css/dashboard.css" media="screen, projection" rel="stylesheet" type="text/css" />
 		<!--[if IE]>
 			<link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
@@ -22,22 +23,21 @@
     </head>
     <body>
 		<nav class="header navbar navbar-static">
-			<div class="logo-container">
-				<a class="logo" href="/">
-					<span class="brand-name">
-						HESTIA						
-					</span>
-				</a>
-			</div>
+			<a class="logo" href="/">
+				<span class="logo-icon"></span>
+				<span class="brand-name">
+					HESTIA
+				</span>
+			</a>
 			<div class="account-actions">
 				 <button type="button" class="navbar-toggle collapsed menu-trigger" data-toggle="collapse">
-			        <span class="sr-only">Toggle navigation</span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			        <span class="icon-bar"></span>
-			      </button>
+				 	<span class="sr-only">Toggle navigation</span>
+				 	<span class="icon-bar"></span>
+				 	<span class="icon-bar"></span>
+				 	<span class="icon-bar"></span>
+				</button>
 			</div>
-		</nav>		
+		</nav>
 		
 		<?php include_once('templates/home.tpl.php'); ?>
 		

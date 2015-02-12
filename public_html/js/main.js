@@ -15,84 +15,27 @@ var body = $('body');
 $(function() {
 	
 	var data = {
-	    labels: ["January", "February", "March", "April", "May", "June", "July"],
-	    datasets: [
-	        {
-	            label: "My First dataset",
-	            fillColor: "rgba(220,220,220,0.2)",
-	            strokeColor: "rgba(220,220,220,1)",
-	            pointColor: "rgba(220,220,220,1)",
-	            pointStrokeColor: "#fff",
-	            pointHighlightFill: "#fff",
-	            pointHighlightStroke: "rgba(220,220,220,1)",
-	            data: [65, 59, 80, 81, 56, 55, 40]
-	        },
-	        {
-	            label: "My Second dataset",
-	            fillColor: "rgba(151,187,205,0.2)",
-	            strokeColor: "rgba(151,187,205,1)",
-	            pointColor: "rgba(151,187,205,1)",
-	            pointStrokeColor: "#fff",
-	            pointHighlightFill: "#fff",
-	            pointHighlightStroke: "rgba(151,187,205,1)",
-	            data: [28, 48, 40, 19, 86, 27, 90]
-	        }
-	    ]
+		// A labels array that can contain any sort of values
+		labels: ['18:15', '18:30', '18:45', '19:00', '19:15', '19:30'],
+		// Our series array that contains series objects or in this case series data arrays
+		series: [
+			[70, 75, 85, 90, 75, 70, 80]
+		]
 	};
 	
-	var options = {	
-	    ///Boolean - Whether grid lines are shown across the chart
-	    scaleShowGridLines : true,
-	
-	    //String - Colour of the grid lines
-	    scaleGridLineColor : "rgba(0,0,0,.05)",
-	
-	    //Number - Width of the grid lines
-	    scaleGridLineWidth : 1,
-	
-	    //Boolean - Whether to show horizontal lines (except X axis)
-	    scaleShowHorizontalLines: true,
-	
-	    //Boolean - Whether to show vertical lines (except Y axis)
-	    scaleShowVerticalLines: true,
-	
-	    //Boolean - Whether the line is curved between points
-	    bezierCurve : true,
-	
-	    //Number - Tension of the bezier curve between points
-	    bezierCurveTension : 0.4,
-	
-	    //Boolean - Whether to show a dot for each point
-	    pointDot : true,
-	
-	    //Number - Radius of each point dot in pixels
-	    pointDotRadius : 4,
-	
-	    //Number - Pixel width of point dot stroke
-	    pointDotStrokeWidth : 1,
-	
-	    //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-	    pointHitDetectionRadius : 20,
-	
-	    //Boolean - Whether to show a stroke for datasets
-	    datasetStroke : true,
-	
-	    //Number - Pixel width of dataset stroke
-	    datasetStrokeWidth : 2,
-	
-	    //Boolean - Whether to fill the dataset with a colour
-	    datasetFill : true,
-	
-	    //String - A legend template
-	    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
-	
-	};
-	
-	// Get context with jQuery - using jQuery's .get() method.
-	var ctx = $("#heartRateChart").get(0).getContext("2d");
-	// This will get the first returned node in the jQuery collection.
-	var heartRateChart = new Chart(ctx).Line(data, options);
-	Chart.defaults.global.responsive = true;
+	// Create a new line chart object where as first parameter we pass in a selector
+	// that is resolving to our chart container element. The Second parameter
+	// is the actual data object.
+	var options = {
+		low: 0,
+		high: 125,
+		showArea: true,
+		axisX: {
+			showGrid: false
+		}
+	}
+	new Chartist.Line('.ct-chart', data, options);
+
 });
 
 	
